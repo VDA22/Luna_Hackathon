@@ -46,7 +46,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     private func makeProposalVC() -> UIViewController {
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "Proposal") as? ViewController else {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "Proposal") as? CreatePhotoOfSuggestion else {
             fatalError()
         }
         let navigation = UINavigationController()
