@@ -139,6 +139,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nei-RO-QGX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xH-U3-Mr6">
+                                        <rect key="frame" x="14" y="368" width="204" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Чужие люди" image="person.3" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KN6-8M-jT8">
+                                        <rect key="frame" x="14" y="338" width="204" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Громкий звук" image="speaker.wave.2" catalog="system"/>
+                                        <connections>
+                                            <segue destination="H4Z-1B-yut" kind="show" id="djr-JW-veg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwg-tE-uYl">
                                 <rect key="frame" x="10" y="44" width="44" height="44"/>
                                 <constraints>
@@ -162,10 +187,42 @@
                             <constraint firstItem="lwg-tE-uYl" firstAttribute="top" secondItem="k46-rf-HMs" secondAttribute="top" id="Xtg-12-Mqt"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ltQ-vq-QbA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eo4-Rv-QGz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1286" y="1489"/>
+            <point key="canvasLocation" x="-510" y="1486"/>
+        </scene>
+        <!--Noise Detector View Controller-->
+        <scene sceneID="7s4-sc-6yX">
+            <objects>
+                <viewController id="H4Z-1B-yut" customClass="NoiseDetectorViewController" customModule="PlaceSome" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zTJ-UM-6Z4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKR-PO-iCD">
+                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ofo-Te-FsF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KKR-PO-iCD" firstAttribute="centerX" secondItem="zTJ-UM-6Z4" secondAttribute="centerX" id="moU-rh-jdR"/>
+                            <constraint firstItem="KKR-PO-iCD" firstAttribute="centerY" secondItem="zTJ-UM-6Z4" secondAttribute="centerY" id="p08-u1-QBh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HTa-9G-D0o"/>
+                    <connections>
+                        <outlet property="dbValueLabel" destination="KKR-PO-iCD" id="07b-mB-5jE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6cB-oM-TRv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="297" y="1486"/>
         </scene>
         <!--Главная-->
         <scene sceneID="sXu-r8-sx3">
@@ -206,6 +263,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Главная" image="business" selectedImage="business" id="hwc-C8-GNw"/>
                     <navigationItem key="navigationItem" id="yyo-rw-zXF"/>
+                    <connections>
+                        <segue destination="FxX-gA-did" kind="show" id="avC-kb-oCG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Nt-zh-3tU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -420,8 +480,10 @@
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="header_address" width="343" height="26"/>
         <image name="menu" width="343" height="485"/>
+        <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="plus" width="26" height="26"/>
         <image name="services_outline_28" width="24" height="24"/>
+        <image name="speaker.wave.2" catalog="system" width="128" height="90"/>
         <image name="stories" width="375" height="112"/>
         <image name="user_outline_28" width="24" height="24"/>
         <systemColor name="labelColor">

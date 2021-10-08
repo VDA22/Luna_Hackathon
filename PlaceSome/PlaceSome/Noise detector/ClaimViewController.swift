@@ -5,9 +5,7 @@ class ClaimViewController: UIViewController {
     
     private var previewLayer: AVCaptureVideoPreviewLayer!
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        UIStatusBarStyle.lightContent
-    }
+    override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +21,7 @@ class ClaimViewController: UIViewController {
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.frame = view.frame
         previewLayer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(previewLayer)
-
+        view.layer.insertSublayer(previewLayer, at: 0)
     }
     
     override func viewDidLayoutSubviews() {

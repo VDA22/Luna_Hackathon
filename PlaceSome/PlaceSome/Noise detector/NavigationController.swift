@@ -6,6 +6,10 @@ class NavigationController: UINavigationController {
         return topViewController
     }
     
+    override open var childForStatusBarHidden: UIViewController? {
+        topViewController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
