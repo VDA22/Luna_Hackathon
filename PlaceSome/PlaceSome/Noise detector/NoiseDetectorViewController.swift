@@ -1,6 +1,14 @@
 import AVFoundation
 import UIKit
 import ShazamKit
+import Nuke
+
+struct ShazamItem {
+    let matchId: String
+    let title: String
+    let artist: String
+    let artwork: URL?
+}
 
 class NoiseDetectorViewController: UIViewController {
     
@@ -12,15 +20,29 @@ class NoiseDetectorViewController: UIViewController {
     let mixerNode = AVAudioMixerNode()
 
     // The session for the active ShazamKit match request.
-    var session: SHSession?
-    var lastMatchID: String?
+    var session = SHSession()
+    var lastShazamItem: ShazamItem?
     
     var samples: [Float] = []
     
+    @IBOutlet private var recordingImageView: UIImageView!
     @IBOutlet private var dbValueLabel: UILabel!
+    @IBOutlet private var trackLabel: UILabel!
+    @IBOutlet private var artistLabel: UILabel!
+    @IBOutlet private var artworkView: UIImageView!
+    @IBOutlet private var shazamContainer: UIView!
+    @IBOutlet private var nextButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        recordingImageView.setGIFImage(name: "recording")
+        shazamContainer.alpha = 0.0
+        shazamContainer.transform = CGAffineTransform(translationX: 150, y: 0)
+        nextButton.layer.cornerRadius = 14
+        nextButton.backgroundColor = .black
+        nextButton.setTitleColor(.white, for: .normal)
+        nextButton.tintColor = .white
+        
         configureAudioEngine()
         try? match()
     }
@@ -28,9 +50,19 @@ class NoiseDetectorViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         audioRecorder?.stop()
+        stopListening()
         try? audioSession.setActive(false)
         audioRecorder = nil
         timer?.cancel()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let claimVC = segue.destination as? NoiseClaimViewController else { return }
+        claimVC.shazamItem = lastShazamItem
+    }
+    
+    @IBAction private func back() {
+        navigationController?.popViewController(animated: true)
     }
     
     func directoryURL() -> URL? {
@@ -66,7 +98,8 @@ class NoiseDetectorViewController: UIViewController {
             
             DispatchQueue.main.async {
                 let movingAverage = self.samples.reduce(0, { $0 + $1 }) / Float(self.samples.count)
-                self.dbValueLabel.text = "\(movingAverage)"
+                let rounded = Int(round(movingAverage))
+                self.dbValueLabel.text = "\(rounded) дБ"
             }
         }
     }
@@ -94,13 +127,7 @@ class NoiseDetectorViewController: UIViewController {
     
     
     func match() throws {
-        
-        // Create a session if one doesn't already exist.
-        if (session == nil) {
-            session = SHSession()
-            session?.delegate = self
-        }
-        
+        session.delegate = self
         // Start listening to the audio to find a match.
         try startListening()
     }
@@ -152,7 +179,7 @@ class NoiseDetectorViewController: UIViewController {
     
     func addAudio(buffer: AVAudioPCMBuffer, audioTime: AVAudioTime) {
         // Add the audio to the current match request.
-        session?.matchStreamingBuffer(buffer, at: audioTime)
+        session.matchStreamingBuffer(buffer, at: audioTime)
     }
     
     func configureAudioEngine() {
@@ -186,13 +213,26 @@ extension NoiseDetectorViewController: SHSessionDelegate {
         if let matchedItem = match.mediaItems.first,
            let title = matchedItem.title,
            let artist = matchedItem.artist,
-           let matchId = matchedItem.shazamID, matchId != lastMatchID {
-            lastMatchID = matchId
-            print("I am currently listening to: \(title) by \(artist) - Via ShazamKit")
-//            DispatchQueue.main.async {
-//            }
+           let matchId = matchedItem.shazamID, matchId != lastShazamItem?.matchId {
+            lastShazamItem = ShazamItem(matchId: matchId, title: title, artist: artist, artwork: matchedItem.artworkURL)
+            DispatchQueue.main.async {
+                self.trackLabel.text = "Кажется, это\"\(title)\"" 
+                self.artistLabel.text = artist
+                if let url =  matchedItem.artworkURL {
+                    Nuke.loadImage(with: url, into: self.artworkView) { _ in
+                        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
+                            self.shazamContainer.alpha = 1.0
+                            self.shazamContainer.transform = .identity
+                        }
+                    }
+                } else {
+                    UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
+                        self.shazamContainer.alpha = 1.0
+                        self.shazamContainer.transform = .identity
+                    }
+                }
+            }
         }
-//        stopListening()
     }
 
     // The delegate method that the session calls when there is no match.
