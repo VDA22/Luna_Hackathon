@@ -12,6 +12,9 @@
 		023B4BDB2710BD1200AEFCF0 /* ClaimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023B4BDA2710BD1200AEFCF0 /* ClaimViewController.swift */; };
 		023B4BDD2710C1B400AEFCF0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023B4BDC2710C1B400AEFCF0 /* NavigationController.swift */; };
 		CD332CE02710DEEB00EBC840 /* AddPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD332CDF2710DEEB00EBC840 /* AddPinViewController.swift */; };
+		CD332CE22710E4D900EBC840 /* CreateNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD332CE12710E4D900EBC840 /* CreateNoticeViewController.swift */; };
+		CD332CE42710E74600EBC840 /* SuggestionCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD332CE32710E74600EBC840 /* SuggestionCompletedViewController.swift */; };
+		CD332CE62710E88600EBC840 /* confetti.gif in Resources */ = {isa = PBXBuildFile; fileRef = CD332CE52710E88500EBC840 /* confetti.gif */; };
 		CD8329122710852300E62161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8329112710852300E62161 /* AppDelegate.swift */; };
 		CD8329142710852300E62161 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8329132710852300E62161 /* SceneDelegate.swift */; };
 		CD8329162710852300E62161 /* CreatePhotoOfSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8329152710852300E62161 /* CreatePhotoOfSuggestion.swift */; };
@@ -28,6 +31,9 @@
 		023B4BDA2710BD1200AEFCF0 /* ClaimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimViewController.swift; sourceTree = "<group>"; };
 		023B4BDC2710C1B400AEFCF0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		CD332CDF2710DEEB00EBC840 /* AddPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinViewController.swift; sourceTree = "<group>"; };
+		CD332CE12710E4D900EBC840 /* CreateNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoticeViewController.swift; sourceTree = "<group>"; };
+		CD332CE32710E74600EBC840 /* SuggestionCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCompletedViewController.swift; sourceTree = "<group>"; };
+		CD332CE52710E88500EBC840 /* confetti.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = confetti.gif; sourceTree = "<group>"; };
 		CD83290E2710852300E62161 /* PlaceSome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaceSome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8329112710852300E62161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD8329132710852300E62161 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,7 +108,10 @@
 				CD8329132710852300E62161 /* SceneDelegate.swift */,
 				CD8329152710852300E62161 /* CreatePhotoOfSuggestion.swift */,
 				CD332CDF2710DEEB00EBC840 /* AddPinViewController.swift */,
+				CD332CE12710E4D900EBC840 /* CreateNoticeViewController.swift */,
+				CD332CE32710E74600EBC840 /* SuggestionCompletedViewController.swift */,
 				CD83292D27109FE200E62161 /* Utilites.swift */,
+				CD332CE52710E88500EBC840 /* confetti.gif */,
 				CD8329252710861300E62161 /* Experience.rcproject */,
 				CD8329172710852300E62161 /* Main.storyboard */,
 				CD83291A2710852400E62161 /* Assets.xcassets */,
@@ -170,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD332CE62710E88600EBC840 /* confetti.gif in Resources */,
 				CD83291E2710852400E62161 /* LaunchScreen.storyboard in Resources */,
 				CD83291B2710852400E62161 /* Assets.xcassets in Resources */,
 				CD8329192710852300E62161 /* Main.storyboard in Resources */,
@@ -186,12 +196,14 @@
 				CD8329162710852300E62161 /* CreatePhotoOfSuggestion.swift in Sources */,
 				023B4BDB2710BD1200AEFCF0 /* ClaimViewController.swift in Sources */,
 				023B4BD827108FFA00AEFCF0 /* MenuViewController.swift in Sources */,
+				CD332CE22710E4D900EBC840 /* CreateNoticeViewController.swift in Sources */,
 				CD8329122710852300E62161 /* AppDelegate.swift in Sources */,
 				023B4BDD2710C1B400AEFCF0 /* NavigationController.swift in Sources */,
 				CD8329262710861300E62161 /* Experience.rcproject in Sources */,
 				CD332CE02710DEEB00EBC840 /* AddPinViewController.swift in Sources */,
 				023B4BD627108C3A00AEFCF0 /* TabBarController.swift in Sources */,
 				CD8329142710852300E62161 /* SceneDelegate.swift in Sources */,
+				CD332CE42710E74600EBC840 /* SuggestionCompletedViewController.swift in Sources */,
 				CD83292E27109FE200E62161 /* Utilites.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
