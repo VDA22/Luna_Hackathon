@@ -48,6 +48,10 @@ class ViewController: UIViewController {
             }
         })
     }
+    
+    @IBAction func close() {
+        dismiss(animated: true)
+    }
 }
 
 extension float4x4 {
