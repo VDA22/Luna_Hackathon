@@ -16,6 +16,7 @@
 		CD83291B2710852400E62161 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD83291A2710852400E62161 /* Assets.xcassets */; };
 		CD83291E2710852400E62161 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD83291C2710852400E62161 /* LaunchScreen.storyboard */; };
 		CD8329262710861300E62161 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = CD8329252710861300E62161 /* Experience.rcproject */; };
+		CD83292E27109FE200E62161 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD83292D27109FE200E62161 /* Utilites.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CD83291D2710852400E62161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD83291F2710852400E62161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD8329252710861300E62161 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
+		CD83292D27109FE200E62161 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				CD8329112710852300E62161 /* AppDelegate.swift */,
 				CD8329132710852300E62161 /* SceneDelegate.swift */,
 				CD8329152710852300E62161 /* ViewController.swift */,
+				CD83292D27109FE200E62161 /* Utilites.swift */,
 				CD8329252710861300E62161 /* Experience.rcproject */,
 				CD8329172710852300E62161 /* Main.storyboard */,
 				CD83291A2710852400E62161 /* Assets.xcassets */,
@@ -169,6 +172,7 @@
 				CD8329262710861300E62161 /* Experience.rcproject in Sources */,
 				023B4BD627108C3A00AEFCF0 /* TabBarController.swift in Sources */,
 				CD8329142710852300E62161 /* SceneDelegate.swift in Sources */,
+				CD83292E27109FE200E62161 /* Utilites.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

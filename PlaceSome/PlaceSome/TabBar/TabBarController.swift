@@ -45,6 +45,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "Proposal") as? ViewController else {
             fatalError()
         }
-        return vc
+        let navigation = UINavigationController()
+        navigation.viewControllers = [vc]
+        return navigation
     }
 }
