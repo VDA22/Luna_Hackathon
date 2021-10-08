@@ -38,6 +38,10 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true)
         }
+        vc.claimAction = { [unowned self] in
+            let vc = self.makeClaimVC()
+            self.viewControllers![0].show(vc, sender: nil)
+        }
         return vc
     }
     
@@ -48,5 +52,13 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let navigation = UINavigationController()
         navigation.viewControllers = [vc]
         return navigation
+    }
+    
+    private func makeClaimVC() -> UIViewController {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "Claim") as? ClaimViewController else {
+            fatalError()
+        }
+        vc.hidesBottomBarWhenPushed = true
+        return vc
     }
 }

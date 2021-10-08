@@ -20,8 +20,8 @@ class MenuViewController: UIViewController {
         claimButton.setTitle("", for: .normal)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
             self.backgroundView.alpha = 0.2
         }

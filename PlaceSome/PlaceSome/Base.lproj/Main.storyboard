@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,11 +21,11 @@
                         <color key="tintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="wKa-0t-kiX" kind="relationship" relationship="viewControllers" id="feG-aT-K7S"/>
+                        <segue destination="0De-k8-N9m" kind="relationship" relationship="viewControllers" id="GSf-Ve-mid"/>
                         <segue destination="S6q-3H-Hef" kind="relationship" relationship="viewControllers" id="KGB-OL-Kmd"/>
                         <segue destination="aKh-Zz-pk2" kind="relationship" relationship="viewControllers" id="zDw-08-mUW"/>
-                        <segue destination="ky7-Uh-7Cv" kind="relationship" relationship="viewControllers" id="iYE-jF-k9X"/>
                         <segue destination="lRd-17-qaG" kind="relationship" relationship="viewControllers" id="Zer-yj-OIF"/>
+                        <segue destination="ky7-Uh-7Cv" kind="relationship" relationship="viewControllers" id="iYE-jF-k9X"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9sT-Uu-y5V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -115,6 +116,58 @@
             <point key="canvasLocation" x="-933.33333333333337" y="-88.392857142857139"/>
         </scene>
         <!--Главная-->
+        <scene sceneID="5Fy-13-R2d">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="0De-k8-N9m" customClass="NavigationController" customModule="PlaceSome" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Главная" image="business" id="BaX-48-XJf"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qwK-Iq-FcN">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wKa-0t-kiX" kind="relationship" relationship="rootViewController" id="lfO-Df-n1D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="guK-Fu-c8I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1288" y="731"/>
+        </scene>
+        <!--Claim View Controller-->
+        <scene sceneID="qPC-Kj-lK5">
+            <objects>
+                <viewController storyboardIdentifier="Claim" id="FxX-gA-did" customClass="ClaimViewController" customModule="PlaceSome" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xE8-OY-YrR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwg-tE-uYl">
+                                <rect key="frame" x="10" y="44" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="k5d-Qo-CA6"/>
+                                    <constraint firstAttribute="height" constant="44" id="rnH-T9-C1m"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="back" destination="FxX-gA-did" eventType="touchUpInside" id="sft-bb-5B6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="k46-rf-HMs"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lwg-tE-uYl" firstAttribute="leading" secondItem="k46-rf-HMs" secondAttribute="leading" constant="10" id="SAM-TS-WiQ"/>
+                            <constraint firstItem="lwg-tE-uYl" firstAttribute="top" secondItem="k46-rf-HMs" secondAttribute="top" id="Xtg-12-Mqt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eo4-Rv-QGz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1286" y="1489"/>
+        </scene>
+        <!--Главная-->
         <scene sceneID="sXu-r8-sx3">
             <objects>
                 <viewController id="wKa-0t-kiX" sceneMemberID="viewController">
@@ -152,10 +205,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Главная" image="business" selectedImage="business" id="hwc-C8-GNw"/>
+                    <navigationItem key="navigationItem" id="yyo-rw-zXF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Nt-zh-3tU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1288.4057971014495" y="-887.27678571428567"/>
+            <point key="canvasLocation" x="-510" y="731"/>
         </scene>
         <!--Идеи-->
         <scene sceneID="fHN-aH-r1o">
@@ -363,6 +417,7 @@
         <image name="actions" width="568" height="424"/>
         <image name="business" width="26" height="26"/>
         <image name="cancel_circle_outline_28" width="16" height="16"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="header_address" width="343" height="26"/>
         <image name="menu" width="343" height="485"/>
         <image name="plus" width="26" height="26"/>
