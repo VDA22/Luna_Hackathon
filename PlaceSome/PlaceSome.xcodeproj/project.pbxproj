@@ -15,6 +15,8 @@
 		028781672710EF5600844D8B /* recording.gif in Resources */ = {isa = PBXBuildFile; fileRef = 028781662710EF5600844D8B /* recording.gif */; };
 		0287816A2710FB7200844D8B /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 028781692710FB7200844D8B /* Nuke */; };
 		0287816C271100B500844D8B /* NoiseClaimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0287816B271100B500844D8B /* NoiseClaimViewController.swift */; };
+		0287816F2711681F00844D8B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0287816E2711681F00844D8B /* MainViewController.swift */; };
+		0287817127116B6700844D8B /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0287817027116B6700844D8B /* ActivityViewController.swift */; };
 		CD332CE02710DEEB00EBC840 /* AddPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD332CDF2710DEEB00EBC840 /* AddPinViewController.swift */; };
 		CD332CE22710E4D900EBC840 /* CreateNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD332CE12710E4D900EBC840 /* CreateNoticeViewController.swift */; };
 		CD332CE42710E74600EBC840 /* SuggestionCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD332CE32710E74600EBC840 /* SuggestionCompletedViewController.swift */; };
@@ -37,6 +39,8 @@
 		023B4BDE2710C7BD00AEFCF0 /* NoiseDetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseDetectorViewController.swift; sourceTree = "<group>"; };
 		028781662710EF5600844D8B /* recording.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = recording.gif; sourceTree = "<group>"; };
 		0287816B271100B500844D8B /* NoiseClaimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseClaimViewController.swift; sourceTree = "<group>"; };
+		0287816E2711681F00844D8B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0287817027116B6700844D8B /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		CD332CDF2710DEEB00EBC840 /* AddPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinViewController.swift; sourceTree = "<group>"; };
 		CD332CE12710E4D900EBC840 /* CreateNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoticeViewController.swift; sourceTree = "<group>"; };
 		CD332CE32710E74600EBC840 /* SuggestionCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCompletedViewController.swift; sourceTree = "<group>"; };
@@ -65,13 +69,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		023B4BD3271087EE00AEFCF0 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
 		023B4BD427108C2B00AEFCF0 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +87,14 @@
 				0287816B271100B500844D8B /* NoiseClaimViewController.swift */,
 			);
 			path = "Noise detector";
+			sourceTree = "<group>";
+		};
+		0287816D2711681300844D8B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0287816E2711681F00844D8B /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		CD8329052710852300E62161 = {
@@ -113,13 +118,14 @@
 			children = (
 				023B4BD92710BC7F00AEFCF0 /* Noise detector */,
 				023B4BD427108C2B00AEFCF0 /* TabBar */,
-				023B4BD3271087EE00AEFCF0 /* Main */,
 				CD8329112710852300E62161 /* AppDelegate.swift */,
+				0287816D2711681300844D8B /* Main */,
 				CD8329132710852300E62161 /* SceneDelegate.swift */,
 				CD8329152710852300E62161 /* CreatePhotoOfSuggestion.swift */,
 				CD332CDF2710DEEB00EBC840 /* AddPinViewController.swift */,
 				CD332CE12710E4D900EBC840 /* CreateNoticeViewController.swift */,
 				CD332CE32710E74600EBC840 /* SuggestionCompletedViewController.swift */,
+				0287817027116B6700844D8B /* ActivityViewController.swift */,
 				CD83292D27109FE200E62161 /* Utilites.swift */,
 				CD332CE52710E88500EBC840 /* confetti.gif */,
 				CD8329252710861300E62161 /* Experience.rcproject */,
@@ -214,12 +220,14 @@
 				CD8329162710852300E62161 /* CreatePhotoOfSuggestion.swift in Sources */,
 				023B4BDB2710BD1200AEFCF0 /* ClaimViewController.swift in Sources */,
 				0287816C271100B500844D8B /* NoiseClaimViewController.swift in Sources */,
+				0287817127116B6700844D8B /* ActivityViewController.swift in Sources */,
 				023B4BD827108FFA00AEFCF0 /* MenuViewController.swift in Sources */,
 				023B4BDF2710C7BD00AEFCF0 /* NoiseDetectorViewController.swift in Sources */,
 				CD332CE22710E4D900EBC840 /* CreateNoticeViewController.swift in Sources */,
 				CD8329122710852300E62161 /* AppDelegate.swift in Sources */,
 				023B4BDD2710C1B400AEFCF0 /* NavigationController.swift in Sources */,
 				CD8329262710861300E62161 /* Experience.rcproject in Sources */,
+				0287816F2711681F00844D8B /* MainViewController.swift in Sources */,
 				CD332CE02710DEEB00EBC840 /* AddPinViewController.swift in Sources */,
 				023B4BD627108C3A00AEFCF0 /* TabBarController.swift in Sources */,
 				CD8329142710852300E62161 /* SceneDelegate.swift in Sources */,

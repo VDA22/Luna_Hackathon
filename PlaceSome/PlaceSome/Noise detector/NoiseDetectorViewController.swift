@@ -87,10 +87,10 @@ class NoiseDetectorViewController: UIViewController {
     }
     
     private func recordDatapoint(average: Float, peak: Float) {
-        let avgdB = dBFS_convertTo_dB(dBFSValue: average) * 100  /*average + 100*/
-        let peakdB = dBFS_convertTo_dB(dBFSValue: peak) * 100 /*peak + 100*/
+        let avgdB = dBFS_convertTo_dB(dBFSValue: average) * 100  /*average + 80*/
+        let peakdB = /*dBFS_convertTo_dB(dBFSValue: peak) * 100 */ peak + 80
 
-        print("avg: \(avgdB), peak: \(peakdB)")
+        print("avg: \(average + 80), peak: \(peak + 80)")
         
         samples.append(peakdB)
         if samples.count > 12 {
@@ -100,6 +100,13 @@ class NoiseDetectorViewController: UIViewController {
                 let movingAverage = self.samples.reduce(0, { $0 + $1 }) / Float(self.samples.count)
                 let rounded = Int(round(movingAverage))
                 self.dbValueLabel.text = "\(rounded) дБ"
+                if rounded >= 60 {
+                    self.dbValueLabel.textColor = .systemRed
+                } else if rounded >= 40 {
+                    self.dbValueLabel.textColor = .systemOrange
+                } else {
+                    self.dbValueLabel.textColor = .systemGreen
+                }
             }
         }
     }

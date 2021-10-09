@@ -28,4 +28,21 @@ class NoiseClaimViewController: UIViewController {
     @IBAction private func back() {
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction private func next() {
+        let activity = storyboard!.instantiateViewController(withIdentifier: "Activity")
+        activity.view.alpha = 0
+        activity.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(activity.view)
+        UIView.animate(withDuration: 0.3) {
+            activity.view.alpha = 1.0
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            guard let vc = self.navigationController?.viewControllers.first as? MainViewController else { return }
+            vc.showNoiseCard()
+            vc.hidesBottomBarWhenPushed = false
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
 }
